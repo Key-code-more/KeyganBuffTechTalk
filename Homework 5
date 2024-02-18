@@ -1,0 +1,94 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter two integers:");
+        int num1 = int.Parse(Console.ReadLine());
+        int num2 = int.Parse(Console.ReadLine());
+        int largest = GetLargest(num1, num2);
+        Console.WriteLine("The largest number is: " + largest);
+    }
+
+    static int GetLargest(int a, int b)
+    {
+        return (a > b) ? a : b;
+    }
+}
+
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter four integers:");
+        int num1 = int.Parse(Console.ReadLine());
+        int num2 = int.Parse(Console.ReadLine());
+        int num3 = int.Parse(Console.ReadLine());
+        int num4 = int.Parse(Console.ReadLine());
+
+        int max1 = GetLargest(num1, num2);
+        int max2 = GetLargest(num3, num4);
+        int largest = GetLargest(max1, max2);
+
+        Console.WriteLine("The largest number is: " + largest);
+    }
+
+    static int GetLargest(int a, int b)
+    {
+        return (a > b) ? a : b;
+    }
+}
+
+
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        createAccount();
+    }
+
+    static bool checkAge(int birth_year)
+    {
+        int current_year = DateTime.Now.Year;
+        int age = current_year - birth_year;
+        return age >= 18;
+    }
+
+    static void createAccount()
+    {
+        Console.WriteLine("Enter your username:");
+        string username = Console.ReadLine();
+
+        Console.WriteLine("Enter your password:");
+        string password1 = Console.ReadLine();
+
+        Console.WriteLine("Enter your password again:");
+        string password2 = Console.ReadLine();
+
+        if (password1 == password2)
+        {
+            Console.WriteLine("Enter your birth year:");
+            int birthYear = int.Parse(Console.ReadLine());
+
+            if (checkAge(birthYear))
+            {
+                Console.WriteLine("Account is created successfully");
+            }
+            else
+            {
+                Console.WriteLine("Could not create an account. You must be at least 18 years old.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Wrong password. Passwords do not match.");
+        }
+    }
+}
